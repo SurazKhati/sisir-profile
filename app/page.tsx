@@ -205,51 +205,81 @@ export default function Home() {
       </section>
 
       <section className={sectionClass}>
-        <div className={cardClass}>
-          <h2 className={headingClass}>Reference</h2>
-          <p className={textClass}>
-            <span className="font-semibold text-stone-900">Advocate Prabin Poudyal</span>
-            <br />
-            K. and G. Advocates, Kathmandu
-            <br />
-            Email: Prabin.poudyal@kandgadvocates.com
-            <br />
-            Contact Number: 9851222652
+        <div className={`${cardClass} overflow-hidden bg-gradient-to-br from-stone-950 via-stone-900 to-red-950 text-white`}>
+          <div className="absolute" />
+          <p className="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-amber-200">
+            Professional Reference
           </p>
+          <div className="mt-6 grid gap-6 md:grid-cols-[1.1fr_0.9fr]">
+            <div>
+              <h2 className="text-3xl font-black tracking-[-0.04em] text-white">Reference</h2>
+              <p className="mt-5 text-lg leading-8 text-stone-200">
+                Advocate Prabin Poudyal
+                <br />
+                K. and G. Advocates, Kathmandu
+              </p>
+            </div>
+            <div className="grid gap-4">
+              <div className="rounded-[1.5rem] border border-white/10 bg-white/8 p-5 backdrop-blur">
+                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-amber-200">Email</p>
+                <p className="mt-3 break-all text-lg font-semibold text-white">
+                  Prabin.poudyal@kandgadvocates.com
+                </p>
+              </div>
+              <div className="rounded-[1.5rem] border border-white/10 bg-white/8 p-5 backdrop-blur">
+                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-amber-200">Contact Number</p>
+                <p className="mt-3 text-lg font-semibold text-white">9851222652</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       <section id="Contact" className="max-w-5xl mx-auto px-6 py-10">
-        <div className={`${cardClass} bg-gradient-to-br from-amber-50 via-white to-red-50`}>
-        <h2 className={headingClass}>Contact</h2>
-        <div className="mt-6 grid gap-6 md:grid-cols-2">
-          <div className="rounded-[1.5rem] border border-amber-100 bg-white p-6 shadow-sm">
-            <p className="text-sm uppercase tracking-wide text-stone-500">Phone</p>
-            <p className="mt-2 text-lg text-stone-900">9846846206</p>
+        <div className={`${cardClass} bg-gradient-to-br from-amber-50 via-white to-rose-50`}>
+        <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="inline-flex rounded-full bg-gradient-to-r from-amber-100 via-orange-100 to-red-100 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-amber-900">
+              Direct Contact
+            </p>
+            <h2 className={`${headingClass} mt-5`}>Contact</h2>
           </div>
-          <div className="rounded-[1.5rem] border border-amber-100 bg-white p-6 shadow-sm">
-            <p className="text-sm uppercase tracking-wide text-stone-500">Email</p>
+          <p className="max-w-xl text-sm leading-7 text-stone-600">
+            Available for professional consultation, case preparation support,
+            legal drafting, and representation-related communication.
+          </p>
+        </div>
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
+          <div className="rounded-[1.75rem] border border-amber-200 bg-white p-7 shadow-[0_20px_50px_rgba(183,121,31,0.08)] transition-transform duration-300 hover:-translate-y-1">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-stone-500">Phone</p>
+            <p className="mt-4 text-3xl font-black tracking-[-0.04em] text-stone-950">9846846206</p>
+            <p className="mt-2 text-sm text-stone-500">For consultation and professional communication</p>
+          </div>
+          <div className="rounded-[1.75rem] border border-amber-200 bg-gradient-to-br from-stone-950 via-stone-900 to-red-900 p-7 shadow-[0_20px_50px_rgba(91,44,82,0.18)] transition-transform duration-300 hover:-translate-y-1">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-amber-200">Email</p>
             <a
               href="mailto:Sisirkafle14@gmail.com"
-              className="mt-2 inline-block text-lg text-stone-900 underline decoration-amber-400 underline-offset-4"
+              className="mt-4 inline-block break-all text-2xl font-black tracking-[-0.04em] text-white underline decoration-amber-400 underline-offset-6"
             >
               Sisirkafle14@gmail.com
             </a>
+            <p className="mt-2 text-sm text-stone-300">For formal legal correspondence and document sharing</p>
           </div>
         </div>
-        <p className={textClass}>
-          I hereby declare that all the information provided above is true,
-          complete, and correct to the best of my knowledge and belief. I take
-          full responsibility for the accuracy of the details mentioned in this
-          curriculum vitae.
-          <br />
-          <br />
-          Sisir Kafle
-          <br />
-          Tarkeshwor, Kathmandu
-          <br />
-          1/16/2026
-        </p>
+        <div className="mt-8 rounded-[1.75rem] border border-white/80 bg-white/80 p-7 shadow-[0_18px_50px_rgba(28,25,23,0.05)]">
+          <p className="text-base leading-8 text-stone-700">
+            I hereby declare that all the information provided above is true,
+            complete, and correct to the best of my knowledge and belief. I take
+            full responsibility for the accuracy of the details mentioned in this
+            curriculum vitae.
+          </p>
+          <div className="mt-8 h-px w-full bg-gradient-to-r from-transparent via-amber-300 to-transparent" />
+          <div className="mt-6">
+            <p className="text-2xl font-black tracking-[-0.04em] text-stone-950">Sisir Kafle</p>
+            <p className="mt-2 text-base text-stone-600">Tarkeshwor, Kathmandu</p>
+            <p className="mt-1 text-base text-stone-600">1/16/2026</p>
+          </div>
+        </div>
         </div>
       </section>
 
