@@ -9,6 +9,7 @@ type HeroAction = {
   href: string;
   download?: string;
   newTab?: boolean;
+  icon?: ReactNode;
 };
 
 type SocialLink = {
@@ -24,6 +25,7 @@ type HeroSectionProps = {
   description?: ReactNode;
   primaryAction?: HeroAction;
   secondaryAction?: HeroAction;
+  tertiaryAction?: HeroAction;
   socialLinks?: SocialLink[];
   image?: string;
   imageAlt?: string;
@@ -38,6 +40,7 @@ export const HeroSection = ({
   description,
   primaryAction,
   secondaryAction,
+  tertiaryAction,
   socialLinks = [],
   image,
   imageAlt = "Profile",
@@ -110,22 +113,23 @@ export const HeroSection = ({
         )}
 
         {/* Buttons */}
-        {(primaryAction || secondaryAction) && (
-          <div className={`${mblview ? "block" : "flex"} text-center mt-7`}>
+        {(primaryAction || secondaryAction || tertiaryAction) && (
+          <div className={`${mblview ? "block" : "flex flex-wrap"} text-center mt-7`}>
             {primaryAction && (
               <button
-                className={`m-3 p-3 rounded-full hover:cursor-pointer transition-transform duration-300 hover:-translate-y-1
+                className={`m-3 inline-flex items-center justify-center gap-3 p-3 rounded-full hover:cursor-pointer transition-transform duration-300 hover:-translate-y-1
                 ${darkState ? "bg-white text-black" : "bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 text-white shadow-lg shadow-orange-200"}
                 ${mblview ? "text-lg w-[60%]" : "text-xl"}`}
                 onClick={() => handleAction(primaryAction)}
               >
+                {primaryAction.icon}
                 {primaryAction.label}
               </button>
             )}
 
             {secondaryAction && (
               <button
-                className={`m-3 p-3 rounded-full border hover:cursor-pointer transition-colors duration-300
+                className={`m-3 inline-flex items-center justify-center gap-3 p-3 rounded-full border hover:cursor-pointer transition-colors duration-300
                 ${
                   darkState
                     ? "border-white text-white bg-neutral-800 hover:bg-neutral-700"
@@ -134,7 +138,24 @@ export const HeroSection = ({
                 ${mblview ? "text-lg w-[60%]" : "text-xl"}`}
                 onClick={() => handleAction(secondaryAction)}
               >
+                {secondaryAction.icon}
                 {secondaryAction.label}
+              </button>
+            )}
+
+            {tertiaryAction && (
+              <button
+                className={`m-3 inline-flex items-center justify-center gap-3 p-3 rounded-full border hover:cursor-pointer transition-colors duration-300
+                ${
+                  darkState
+                    ? "border-emerald-400 text-white bg-emerald-900/30 hover:bg-emerald-800/40"
+                    : "border-emerald-600 text-emerald-900 bg-white/80 backdrop-blur hover:bg-emerald-50"
+                }
+                ${mblview ? "text-lg w-[60%]" : "text-xl"}`}
+                onClick={() => handleAction(tertiaryAction)}
+              >
+                {tertiaryAction.icon}
+                {tertiaryAction.label}
               </button>
             )}
           </div>

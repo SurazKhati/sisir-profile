@@ -13,7 +13,7 @@ export const Footer = () => {
       <div className="mx-auto max-w-5xl rounded-[1.75rem] border border-white/80 bg-white/75 px-6 py-8 text-center shadow-[0_18px_60px_rgba(28,25,23,0.06)] backdrop-blur">
       <p className={`text-2xl font-black tracking-[-0.04em] ${mainText}`}>Sisir Kafle</p>
       <p className={`mt-3 text-lg ${subText}`}>
-        Advocate | Legal Associate | Litigation and Compliance Professional
+        Legal Executive | Advocate | Litigation and Compliance Professional
       </p>
       <div className="mx-auto mt-5 h-px w-32 bg-gradient-to-r from-transparent via-amber-400 to-transparent" />
       <p className={`mt-5 text-sm ${subText}`}>
