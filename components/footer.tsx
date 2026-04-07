@@ -11,7 +11,7 @@ export const Footer = () => {
   return (
     <div className={`${bgClass} px-6 pb-10 pt-4`}>
       <div className="mx-auto max-w-5xl rounded-[1.75rem] border border-white/80 bg-white/75 px-6 py-8 text-center shadow-[0_18px_60px_rgba(28,25,23,0.06)] backdrop-blur">
-      <p className={`text-2xl font-black tracking-[-0.04em] ${mainText}`}>Sisir Kafle</p>
+      <p className={`font-display text-4xl font-bold tracking-[-0.04em] ${mainText}`}>Sisir Kafle</p>
       <p className={`mt-3 text-lg ${subText}`}>
         Legal Executive | Advocate | Litigation and Compliance Professional
       </p>

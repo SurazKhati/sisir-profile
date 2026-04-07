@@ -1,16 +1,15 @@
 @import "tailwindcss";
 
-@import "@fontsource/inter/400.css"; 
-@import "@fontsource/inter/700.css"; 
-
 @theme {
   --color-ink: #1c1917;
-  --color-paper: #fffaf3;
-  --color-paper-strong: #fff1da;
-  --color-gold: #b7791f;
-  --color-gold-soft: #f6d7a7;
-  --color-rust: #a63d2f;
-  --color-plum: #5b2c52;
+  --color-paper: #fffaf4;
+  --color-paper-strong: #f9efdf;
+  --color-gold: #b08968;
+  --color-gold-soft: #ead7bf;
+  --color-rust: #6f1d1b;
+  --color-plum: #432534;
+  --font-display: "Cormorant Garamond", serif;
+  --font-body: "Manrope", sans-serif;
 }
 
 @layer utilities {
@@ -67,6 +66,42 @@
     background-size: 200% 100%;
     animation: shimmer 6s linear infinite;
   }
+
+  @keyframes drift {
+    0%, 100% {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    50% {
+      transform: translate3d(0, -12px, 0) scale(1.03);
+    }
+  }
+
+  @keyframes reveal-up {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-drift {
+    animation: drift 9s ease-in-out infinite;
+  }
+
+  .animate-reveal-up {
+    animation: reveal-up 0.8s ease-out both;
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
 }
 
 html {
@@ -74,10 +109,16 @@ html {
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-body);
   background:
-    radial-gradient(circle at top left, rgba(246, 215, 167, 0.55), transparent 30%),
-    radial-gradient(circle at top right, rgba(166, 61, 47, 0.12), transparent 28%),
-    linear-gradient(180deg, #fffaf3 0%, #fff6ea 100%);
+    radial-gradient(circle at top left, rgba(234, 215, 191, 0.7), transparent 28%),
+    radial-gradient(circle at top right, rgba(111, 29, 27, 0.12), transparent 24%),
+    linear-gradient(180deg, #fffaf4 0%, #fdf5ea 48%, #fbf2e8 100%);
   color: var(--color-ink);
+  min-height: 100vh;
+}
+
+::selection {
+  background: rgba(176, 137, 104, 0.28);
+  color: #201a18;
 }

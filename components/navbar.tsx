@@ -27,7 +27,7 @@ export const Navbar = ({ title, options }: { title: string; options?: string[] }
           onClick={() => scrollToSection("Home")}
         >
           <span
-            className={`block text-3xl font-black tracking-[-0.04em] md:text-4xl
+            className={`font-display block text-4xl font-bold tracking-[-0.04em] md:text-5xl
               ${
                 darkState
                   ? "text-white"
@@ -57,7 +57,7 @@ export const Navbar = ({ title, options }: { title: string; options?: string[] }
               {options?.map((opt, idx) => (
                 <li
                   key={idx}
-                  className={`rounded-full px-5 py-2 font-sans text-lg font-semibold cursor-pointer transition-all duration-300
+                className={`rounded-full px-5 py-2 text-[0.98rem] font-semibold tracking-[0.04em] cursor-pointer transition-all duration-300
                     ${
                       darkState
                         ? "text-gray-300 hover:bg-neutral-800 hover:text-white"
@@ -111,7 +111,7 @@ export const Navbar = ({ title, options }: { title: string; options?: string[] }
           {options?.map((opt, idx) => (
             <li
               key={idx}
-              className={`rounded-2xl px-4 py-3 font-sans text-xl font-semibold cursor-pointer
+                className={`rounded-2xl px-4 py-3 text-xl font-semibold cursor-pointer
                 ${
                   darkState
                     ? "text-gray-300 hover:bg-neutral-800"

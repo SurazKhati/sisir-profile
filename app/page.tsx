@@ -3,11 +3,11 @@ import { HeroSection } from "@/components/herosection";
 import { Footer } from "@/components/footer";
 
 const sectionClass =
-  "mx-auto max-w-5xl px-6 py-10";
+  "mx-auto max-w-6xl px-6 py-10 md:py-14";
 const cardClass =
-  "rounded-[2rem] border border-white/70 bg-white/75 p-8 shadow-[0_24px_80px_rgba(166,61,47,0.08)] backdrop-blur";
+  "rounded-[2rem] border border-white/70 bg-white/78 p-8 shadow-[0_28px_90px_rgba(111,29,27,0.08)] backdrop-blur";
 const headingClass =
-  "text-2xl font-semibold text-stone-900 md:text-3xl";
+  "font-display text-4xl font-bold text-stone-900 md:text-5xl";
 const textClass = "mt-4 text-base leading-8 text-stone-700";
 
 const experience = [
@@ -93,9 +93,9 @@ const achievements = [
 export default function Home() {
   return (
     <div className="relative w-full overflow-hidden">
-      <div className="pointer-events-none absolute left-0 top-24 h-72 w-72 rounded-full bg-amber-200/50 blur-3xl" />
-      <div className="pointer-events-none absolute right-0 top-[32rem] h-96 w-96 rounded-full bg-rose-200/40 blur-3xl" />
-      <div className="pointer-events-none absolute bottom-24 left-1/3 h-80 w-80 rounded-full bg-orange-100/70 blur-3xl" />
+      <div className="pointer-events-none absolute left-[-4rem] top-24 h-80 w-80 rounded-full bg-amber-200/55 blur-3xl animate-drift" />
+      <div className="pointer-events-none absolute right-[-2rem] top-[24rem] h-[28rem] w-[28rem] rounded-full bg-rose-200/35 blur-3xl animate-drift" />
+      <div className="pointer-events-none absolute bottom-24 left-1/3 h-96 w-96 rounded-full bg-orange-100/75 blur-3xl animate-drift" />
 
       <Navbar
         title="Sisir Kafle"
@@ -103,10 +103,10 @@ export default function Home() {
       />
 
       <section id="Home" className="relative mx-auto max-w-6xl px-4 pt-8 md:px-6 md:pt-12">
-        <div className="rounded-[2rem] border border-white/70 bg-white/65 shadow-[0_28px_90px_rgba(91,44,82,0.12)] backdrop-blur">
+        <div className="rounded-[2.25rem] border border-white/70 bg-white/66 shadow-[0_32px_110px_rgba(91,44,82,0.12)] backdrop-blur animate-reveal-up">
         <HeroSection
           title={
-            <span className="bg-gradient-to-r from-amber-700 via-red-600 to-orange-500 bg-clip-text text-transparent">
+            <span className="font-display bg-gradient-to-r from-[#6f1d1b] via-[#8b3a32] to-[#b08968] bg-clip-text text-transparent">
               SISIR KAFLE, Advocate
             </span>
           }
@@ -159,7 +159,7 @@ export default function Home() {
 
       <section className={sectionClass}>
         <div className={cardClass}>
-          <p className="inline-flex rounded-full bg-gradient-to-r from-amber-100 via-orange-100 to-red-100 px-4 py-2 text-sm font-medium tracking-[0.2em] text-amber-900 uppercase animate-shimmer">
+          <p className="inline-flex rounded-full bg-gradient-to-r from-amber-100 via-orange-100 to-red-100 px-4 py-2 text-sm font-semibold tracking-[0.22em] text-[#6f1d1b] uppercase animate-shimmer">
             Professional Summary
           </p>
           <h2 className={`${headingClass} mt-5`}>Objective</h2>
@@ -182,14 +182,14 @@ export default function Home() {
           {experience.map((item) => (
             <div
               key={`${item.title}-${item.period}`}
-              className="rounded-[1.5rem] border border-amber-100 bg-gradient-to-br from-white via-amber-50/40 to-orange-50/70 p-6 transition-transform duration-300 hover:-translate-y-1"
+              className="rounded-[1.75rem] border border-amber-100 bg-gradient-to-br from-white via-amber-50/45 to-orange-50/70 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(111,29,27,0.10)]"
             >
               <div className="flex flex-col gap-1 md:flex-row md:items-start md:justify-between">
                 <div>
                   <h3 className="text-xl font-semibold text-stone-900">{item.title}</h3>
                   <p className="text-base text-stone-700">{item.organization}</p>
                 </div>
-                <p className="rounded-full bg-stone-900 px-4 py-1 text-sm uppercase tracking-wide text-white">
+                <p className="rounded-full bg-gradient-to-r from-stone-950 to-[#6f1d1b] px-4 py-1 text-sm uppercase tracking-wide text-white">
                   {item.period}
                 </p>
               </div>
@@ -220,8 +220,8 @@ export default function Home() {
         </div>
         </div>
 
-      <div className={`${cardClass} bg-gradient-to-br from-stone-900 via-stone-800 to-red-900 text-white`}>
-        <h2 className={headingClass}>Skills</h2>
+      <div className={`${cardClass} bg-gradient-to-br from-stone-950 via-stone-900 to-[#6f1d1b] text-white`}>
+        <h2 className="font-display text-4xl font-bold md:text-5xl">Skills</h2>
         <div className="mt-6 flex flex-wrap gap-3">
           {skills.map((skill) => (
             <span
@@ -258,7 +258,7 @@ export default function Home() {
             {achievements.map((achievement) => (
               <div
                 key={achievement.title}
-                className="rounded-[1.5rem] border border-amber-100 bg-gradient-to-r from-white via-amber-50/50 to-rose-50/50 p-6"
+                className="rounded-[1.6rem] border border-amber-100 bg-gradient-to-r from-white via-amber-50/50 to-rose-50/50 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_60px_rgba(176,137,104,0.16)]"
               >
                 <h3 className="text-xl font-semibold text-stone-900">
                   {achievement.title}
@@ -276,14 +276,14 @@ export default function Home() {
       </section>
 
       <section className={sectionClass}>
-        <div className={`${cardClass} overflow-hidden bg-gradient-to-br from-stone-950 via-stone-900 to-red-950 text-white`}>
+        <div className={`${cardClass} overflow-hidden bg-gradient-to-br from-stone-950 via-stone-900 to-[#6f1d1b] text-white`}>
           <div className="absolute" />
           <p className="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-amber-200">
             Professional Reference
           </p>
           <div className="mt-6 grid gap-6 md:grid-cols-[1.1fr_0.9fr]">
             <div>
-              <h2 className="text-3xl font-black tracking-[-0.04em] text-white">Reference</h2>
+              <h2 className="font-display text-5xl font-bold tracking-[-0.04em] text-white">Reference</h2>
               <p className="mt-5 text-lg leading-8 text-stone-200">
                 Advocate Prabin Poudyal
                 <br />
@@ -321,12 +321,12 @@ export default function Home() {
           </p>
         </div>
         <div className="mt-8 grid gap-6 md:grid-cols-2">
-          <div className="rounded-[1.75rem] border border-amber-200 bg-white p-7 shadow-[0_20px_50px_rgba(183,121,31,0.08)] transition-transform duration-300 hover:-translate-y-1">
+          <div className="rounded-[1.75rem] border border-amber-200 bg-white p-7 shadow-[0_20px_50px_rgba(183,121,31,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(183,121,31,0.16)]">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-stone-500">Phone</p>
             <p className="mt-4 text-3xl font-black tracking-[-0.04em] text-stone-950">9846846206</p>
             <p className="mt-2 text-sm text-stone-500">For consultation and professional communication</p>
           </div>
-          <div className="rounded-[1.75rem] border border-amber-200 bg-gradient-to-br from-stone-950 via-stone-900 to-red-900 p-7 shadow-[0_20px_50px_rgba(91,44,82,0.18)] transition-transform duration-300 hover:-translate-y-1">
+          <div className="rounded-[1.75rem] border border-amber-200 bg-gradient-to-br from-stone-950 via-stone-900 to-[#6f1d1b] p-7 shadow-[0_20px_50px_rgba(91,44,82,0.18)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(91,44,82,0.26)]">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-amber-200">Email</p>
             <a
               href="mailto:Sisirkafle14@gmail.com"
